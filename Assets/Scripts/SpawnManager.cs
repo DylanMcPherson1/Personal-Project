@@ -6,6 +6,8 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject garbagePrefab;
     public GameObject toxicPrefab;
+    public bool onScreen;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +22,8 @@ public class SpawnManager : MonoBehaviour
     }
     void SpawnItems()
     {
-        Instantiate(garbagePrefab, new Vector2(5f, Random.Range(-5.0f, 5f)), Quaternion.identity);
-        Instantiate(toxicPrefab, new Vector2(5f, Random.Range(-5.0f, 5f)), Quaternion.identity);
+        Instantiate(garbagePrefab, new Vector2((player.transform.position.x + 10f), Random.Range(-5.0f, 5f)), Quaternion.identity);
+        Instantiate(toxicPrefab, new Vector2((player.transform.position.x + 10f), Random.Range(-5.0f, 5f)), Quaternion.identity);
     }
 
 }
